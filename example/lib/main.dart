@@ -23,7 +23,7 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
     _otpAutofillSmsConsent = OtpAutofillSmsConsent(
-      pattern: r'\d{4,}',
+      pattern: r'\b\w{6}\b',
       onAllowed: (sms) {
         _sms = sms;
         setState(() {});
@@ -34,7 +34,7 @@ class _MyAppState extends State<MyApp> {
       onPatternUnmatched: () {
         _responseText = 'OTP not found! Please try entering OTP manually.';
       },
-    )..start('otpSender');
+    )..start('ECITIZEN');
   }
 
   @override
